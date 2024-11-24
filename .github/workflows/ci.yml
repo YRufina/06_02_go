@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
+      - name: Setup Go 1.19
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.19
+      - name: Display Go version
+        run: go version
       - name: Build Binary
         run: make
       - name: Simple Test
